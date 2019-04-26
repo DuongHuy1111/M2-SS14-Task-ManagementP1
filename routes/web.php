@@ -12,27 +12,20 @@
 */
 
 Route::prefix('customer')->group(function (){
-   Route::get('index', function (){
-       return view('modules.customer.index');
+   Route::get('list', function (){
+       return view('modules.customer.list');
    });
 
-   Route::get('create', function (){
-       //hien thi form tao khach hang
-   });
+   Route::get('/customer/add', 'CustomerController@addCustomer')->name('create');
 
-   Route::post('store', function (){
-       //xu li du lieu tao khac hang thong qua phuong thuc post
-   });
+   //Route::post('/customer', 'CustomerController@addCustomer');
 
-   Route::get('{id}/edit', function (){
-       //hien thi thong tin chi tiet khach hang co ma dinh danh id
-   });
+   Route::get('customer/{id}/edit', 'CustomerController@editCustomer')->name('edit');
 
-   Route::patch('{id}/update', function (){
-       //xu li luu du lieu thong tin khach hang duoc chinh sua thong qua Patch tu form
-   });
+   //Route::post('customer/', 'CustomerController@editCustomer');
 
-   Route::delete('{id}', function (){
-       //xoa thong tin du lieu khach hang
-   });
+
+   Route::get('/customer/{id}/delete', 'CustomerController@deleteCustomer')->name('delete');
+
+   //Route::post('/customer/', 'CustomerController@deleteCustomer');
 });

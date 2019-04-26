@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1>Danh sách khách hàng</h1>
+
 <table border="1">
     <thead>
     <tr>
@@ -23,7 +24,7 @@
         <td>01234567890</td>
         <td>email.test@mail.com</td>
         <td>
-            <a href="#">Xem</a> | <a href="#">Sửa</a> | <a href="#">Xóa</a&
+            <a href="{{route('create')}}">Thêm</a> | <a href="{{route('edit', ['id' => 1])}}">Sửa</a> | <a href="{{route('delete', ['id' => 1])}}">Xóa</a>
         </td>
     </tr>
     <tr>
